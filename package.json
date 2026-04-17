@@ -1,0 +1,1 @@
+{ "name": "Blur-MacOS", "version": "1.0.0", "bin": "src-tauri/target/debug/Blur-MacOS", "dependencies": {  } }
