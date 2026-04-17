@@ -1,0 +1,36 @@
+[package]
+name = "BlurAutoClicker"
+version = "3.4.1"
+description = "BlurAutoClicker — macOS port"
+authors = ["Blur009", "Djozman"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = [] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.12", features = ["json"] }
+tauri-plugin-shell = "2.0"
+tauri-plugin-log = "2.0"
+tauri-plugin-process = "2.3.1"
+tauri-plugin-store = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-updater = "2.10.0"
+log = "0.4"
+serde_json = "1.0"
+raw-window-handle = "0.6.2"
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+dirs = "6.0.0"
+
+# macOS system frameworks are linked via #[link] attributes in source files.
+# No windows-sys or winreg on macOS.
